@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about my background, skills, and professional journey">
+    <meta name="keywords" content="portfolio, about, skills, experience, developer">
+    <meta name="author" content="Your Name">
+
+    <title>About Me | Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Portfolio.</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE HEADER ========== -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="hero-container" style="grid-template-columns: 1fr;">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p class="hero-subtitle scroll-animate">Get to Know Me</p>
+                <h1 class="hero-title scroll-animate">About Me</h1>
+                <p class="hero-description scroll-animate" style="margin: 0 auto;">
+                    Passionate developer and designer crafting digital experiences that make a difference.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Profile Image -->
+                <div class="scroll-animate">
+                    <div class="about-image-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop"
+                             alt="Profile Photo"
+                             class="about-image">
+                    </div>
+                </div>
+
+                <!-- Bio Content -->
+                <div class="about-content scroll-animate">
+                    <h2>Hello, I'm <span class="text-gradient">Your Name</span></h2>
+                    <p>
+                        I'm a full-stack developer and UI/UX designer with over 8 years of experience creating
+                        innovative digital solutions. My passion lies in bridging the gap between design and
+                        technology to build products that are not only functional but delightful to use.
+                    </p>
+                    <p>
+                        Throughout my career, I've had the privilege of working with startups and established
+                        companies, helping them transform their ideas into successful digital products. I believe
+                        in user-centered design, clean code, and the power of collaboration.
+                    </p>
+                    <p>
+                        When I'm not coding or designing, you'll find me exploring new technologies, contributing
+                        to open-source projects, or sharing knowledge through blog posts and speaking at tech
+                        conferences.
+                    </p>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+                        <a href="#" class="btn btn-outline" style="margin-left: 1rem;">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header scroll-animate" style="text-align: center; margin-left: 0;">
+                <p class="section-subtitle">My Expertise</p>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend Development -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="skill-name">Frontend Development</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        HTML5, CSS3, JavaScript (ES6+), React, Vue.js, Next.js, TypeScript
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="95%" style="width: 0;"></div>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fab fa-node"></i>
+                    </div>
+                    <h3 class="skill-name">Backend Development</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        Node.js, Express, Python, Django, RESTful APIs, GraphQL
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="90%" style="width: 0;"></div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-name">Database Management</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        MongoDB, PostgreSQL, MySQL, Redis, Firebase
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="85%" style="width: 0;"></div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="skill-name">UI/UX Design</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        Figma, Adobe XD, Sketch, Prototyping, User Research
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="88%" style="width: 0;"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="skill-name">Mobile Development</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        React Native, Flutter, iOS, Android, Progressive Web Apps
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="82%" style="width: 0;"></div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div class="skill-card glass-card scroll-animate">
+                    <div class="skill-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="skill-name">DevOps & Cloud</h3>
+                    <p style="margin-bottom: 1rem; color: var(--color-gray-light);">
+                        AWS, Docker, Kubernetes, CI/CD, Git, GitHub Actions
+                    </p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-width="80%" style="width: 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE TIMELINE ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header scroll-animate" style="text-align: center; margin-left: 0;">
+                <p class="section-subtitle">My Journey</p>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item scroll-animate">
+                    <div class="glass-card">
+                        <p class="timeline-date">2021 - Present</p>
+                        <h3 class="timeline-title">Senior Full-Stack Developer</h3>
+                        <p class="timeline-company">TechCorp Solutions</p>
+                        <p class="timeline-description">
+                            Leading development of enterprise-level web applications. Architecting scalable
+                            solutions and mentoring junior developers. Key achievements include reducing
+                            application load time by 60% and implementing CI/CD pipeline.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item scroll-animate">
+                    <div class="glass-card">
+                        <p class="timeline-date">2019 - 2021</p>
+                        <h3 class="timeline-title">Full-Stack Developer</h3>
+                        <p class="timeline-company">Digital Innovations Inc.</p>
+                        <p class="timeline-description">
+                            Developed responsive web applications using React and Node.js. Collaborated with
+                            design team to implement pixel-perfect UIs. Successfully delivered 15+ client
+                            projects on time and within budget.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item scroll-animate">
+                    <div class="glass-card">
+                        <p class="timeline-date">2017 - 2019</p>
+                        <h3 class="timeline-title">Frontend Developer</h3>
+                        <p class="timeline-company">Creative Web Studio</p>
+                        <p class="timeline-description">
+                            Built interactive user interfaces and landing pages for various clients. Focused
+                            on performance optimization and cross-browser compatibility. Improved website
+                            accessibility scores by 40%.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item scroll-animate">
+                    <div class="glass-card">
+                        <p class="timeline-date">2016 - 2017</p>
+                        <h3 class="timeline-title">Junior Web Developer</h3>
+                        <p class="timeline-company">StartUp Labs</p>
+                        <p class="timeline-description">
+                            Started my professional journey building websites and learning modern web
+                            development practices. Contributed to multiple successful product launches and
+                            gained hands-on experience with agile methodologies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="timeline-item scroll-animate">
+                    <div class="glass-card">
+                        <p class="timeline-date">2012 - 2016</p>
+                        <h3 class="timeline-title">Bachelor's Degree in Computer Science</h3>
+                        <p class="timeline-company">University of Technology</p>
+                        <p class="timeline-description">
+                            Graduated with honors. Focused on software engineering, algorithms, and
+                            human-computer interaction. Led university coding club and participated in
+                            multiple hackathons.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS & AWARDS ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header scroll-animate" style="text-align: center; margin-left: 0;">
+                <p class="section-subtitle">Recognition</p>
+                <h2 class="section-title">Certifications & Awards</h2>
+            </div>
+
+            <div class="project-meta scroll-animate">
+                <div class="glass-card" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: var(--color-cyan); margin-bottom: 1rem;">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">AWS Certified Solutions Architect</h3>
+                    <p style="color: var(--color-gray-medium); margin: 0;">Amazon Web Services</p>
+                </div>
+
+                <div class="glass-card" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: var(--color-purple); margin-bottom: 1rem;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Best Web Application</h3>
+                    <p style="color: var(--color-gray-medium); margin: 0;">Tech Innovation Awards 2023</p>
+                </div>
+
+                <div class="glass-card" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: var(--color-cyan); margin-bottom: 1rem;">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Google UX Design Professional</h3>
+                    <p style="color: var(--color-gray-medium); margin: 0;">Google</p>
+                </div>
+
+                <div class="glass-card" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: var(--color-purple); margin-bottom: 1rem;">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Developer of the Year</h3>
+                    <p style="color: var(--color-gray-medium); margin: 0;">TechCorp Solutions 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERESTS & HOBBIES ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header scroll-animate" style="text-align: center; margin-left: 0;">
+                <p class="section-subtitle">Beyond Work</p>
+                <h2 class="section-title">Interests & Hobbies</h2>
+            </div>
+
+            <div class="skills-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-blog" style="color: var(--color-cyan);"></i>
+                    </div>
+                    <h4>Technical Writing</h4>
+                    <p style="font-size: 0.9rem;">Sharing knowledge through blog posts</p>
+                </div>
+
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-code-branch" style="color: var(--color-purple);"></i>
+                    </div>
+                    <h4>Open Source</h4>
+                    <p style="font-size: 0.9rem;">Contributing to community projects</p>
+                </div>
+
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-microphone" style="color: var(--color-cyan);"></i>
+                    </div>
+                    <h4>Public Speaking</h4>
+                    <p style="font-size: 0.9rem;">Tech talks and conference presentations</p>
+                </div>
+
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-camera" style="color: var(--color-purple);"></i>
+                    </div>
+                    <h4>Photography</h4>
+                    <p style="font-size: 0.9rem;">Capturing moments and landscapes</p>
+                </div>
+
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-plane" style="color: var(--color-cyan);"></i>
+                    </div>
+                    <h4>Travel</h4>
+                    <p style="font-size: 0.9rem;">Exploring new places and cultures</p>
+                </div>
+
+                <div class="glass-card scroll-animate" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-book-reader" style="color: var(--color-purple);"></i>
+                    </div>
+                    <h4>Reading</h4>
+                    <p style="font-size: 0.9rem;">Tech books and sci-fi novels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="glass-card scroll-animate" style="text-align: center; padding: 4rem 2rem;">
+                <h2 style="margin-bottom: 1rem;">Let's Create Something Amazing</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    I'm always interested in hearing about new projects and opportunities. Let's connect!
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                    <a href="projects.html" class="btn btn-outline">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Dribbble">
+                    <i class="fab fa-dribbble"></i>
+                </a>
+            </div>
+
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
