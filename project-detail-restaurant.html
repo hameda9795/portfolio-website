@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Management App - Complete case study">
+    <meta name="keywords" content="portfolio, case study, web development, restaurant app">
+    <meta name="author" content="Your Name">
+
+    <title>Restaurant Management App - Case Study | Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Portfolio.</a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== PROJECT HERO ========== -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="scroll-animate">
+                <a href="projects.html" style="color: var(--color-cyan); display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem;">
+                    <i class="fas fa-arrow-left"></i> بازگشت به پروژه‌ها
+                </a>
+            </div>
+
+            <div class="scroll-animate">
+                <span class="project-category">Web Development</span>
+                <h1 style="margin-top: 1rem; margin-bottom: 1.5rem;">Restaurant Management App</h1>
+                <p style="font-size: 1.25rem; color: var(--color-gray-light); max-width: 800px;">
+                    یک سیستم مدیریت جامع برای رستوران‌ها که فرآیند ثبت سفارش، مدیریت منو و پیگیری تحویل را کاملاً خودکار می‌کند
+                </p>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&h=800&fit=crop"
+                 alt="Restaurant Management App"
+                 class="project-hero-image scroll-animate"
+                 loading="lazy">
+        </div>
+    </section>
+
+    <!-- ========== PROJECT METADATA ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="project-meta scroll-animate">
+                <div class="meta-item glass-card">
+                    <h4>کلاینت</h4>
+                    <p>Restaurant Chain</p>
+                </div>
+                <div class="meta-item glass-card">
+                    <h4>سال</h4>
+                    <p>2024</p>
+                </div>
+                <div class="meta-item glass-card">
+                    <h4>نقش من</h4>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="meta-item glass-card">
+                    <h4>مدت زمان</h4>
+                    <p>3 ماه</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECT CONTENT ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="project-content">
+                <!-- Overview -->
+                <div class="project-section scroll-animate">
+                    <h3>خلاصه پروژه</h3>
+                    <p>
+                        یک زنجیره رستوران با چندین شعبه به دنبال راه‌حلی برای مدیریت سفارش‌ها و بهبود کیفیت سرویس‌دهی بود.
+                        آنها مشکلات زیادی با سیستم دستی خود داشتند که منجر به خطاهای متعدد و کاهش رضایت مشتری می‌شد.
+                    </p>
+                    <p>
+                        من یک اپلیکیشن وب کامل طراحی و توسعه دادم که تمام جنبه‌های مدیریت رستوران را پوشش می‌دهد - از
+                        ثبت سفارش گرفته تا پیگیری تحویل و گزارش‌گیری.
+                    </p>
+                </div>
+
+                <!-- Technologies -->
+                <div class="project-section scroll-animate">
+                    <h3>تکنولوژی‌های استفاده شده</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">JWT Auth</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                </div>
+
+                <!-- Problem Statement -->
+                <div class="project-section scroll-animate">
+                    <h3>چالش‌ها و مشکلات</h3>
+                    <p>
+                        رستوران‌ها با چندین مشکل اساسی در مدیریت روزمره خود روبرو بودند:
+                    </p>
+                    <ul style="color: var(--color-gray-light); line-height: 1.8; margin-left: 1.5rem;">
+                        <li><strong>خطاهای سفارش:</strong> ثبت دستی سفارش‌ها منجر به اشتباهات مکرر می‌شد</li>
+                        <li><strong>تاخیر در سرویس:</strong> فرآیند کند ثبت و انتقال سفارش به آشپزخانه</li>
+                        <li><strong>عدم شفافیت:</strong> عدم امکان پیگیری وضعیت سفارش‌ها به صورت Real-time</li>
+                        <li><strong>مدیریت منو:</strong> به‌روزرسانی دستی منو در تمام شعبات زمان‌بر بود</li>
+                        <li><strong>گزارش‌گیری:</strong> عدم دسترسی به آمار دقیق فروش و عملکرد</li>
+                    </ul>
+                </div>
+
+                <!-- Solution -->
+                <div class="project-section scroll-animate">
+                    <h3>راه‌حل ارائه شده</h3>
+                    <p>
+                        یک سیستم جامع با قابلیت‌های زیر توسعه دادم:
+                    </p>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">
+                            <i class="fas fa-mobile-alt" style="margin-left: 0.5rem;"></i>
+                            سیستم ثبت سفارش هوشمند
+                        </h4>
+                        <p style="color: var(--color-gray-light); margin: 0;">
+                            رابط کاربری ساده برای گارسون‌ها جهت ثبت سفارش با قابلیت انتخاب سریع غذاها،
+                            ویرایش آنی، و ارسال مستقیم به آشپزخانه
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">
+                            <i class="fas fa-utensils" style="margin-left: 0.5rem;"></i>
+                            مدیریت منوی دیجیتال
+                        </h4>
+                        <p style="color: var(--color-gray-light); margin: 0;">
+                            پنل مدیریتی برای افزودن، ویرایش و حذف اقلام منو با قابلیت آپلود تصویر،
+                            تعیین قیمت و دسته‌بندی
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="margin-left: 0.5rem;"></i>
+                            پیگیری Real-time
+                        </h4>
+                        <p style="color: var(--color-gray-light); margin: 0;">
+                            با استفاده از WebSocket، وضعیت سفارش‌ها به صورت لحظه‌ای بروز می‌شود:
+                            در صف، در حال آماده‌سازی، آماده، تحویل داده شده
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">
+                            <i class="fas fa-chart-bar" style="margin-left: 0.5rem;"></i>
+                            داشبورد تحلیلی
+                        </h4>
+                        <p style="color: var(--color-gray-light); margin: 0;">
+                            نمایش آمار فروش روزانه، هفتگی و ماهانه، پرفروش‌ترین محصولات،
+                            نمودارهای تعاملی و گزارش‌های قابل Export
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Process -->
+                <div class="project-section scroll-animate">
+                    <h3>فرآیند توسعه</h3>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">1️⃣ تحقیق و تحلیل</h4>
+                        <p style="color: var(--color-gray-light);">
+                            مصاحبه با مدیران و کارکنان رستوران، بررسی workflow موجود، و شناسایی نقاط ضعف.
+                            ایجاد User Stories و تعریف Requirements.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">2️⃣ طراحی UI/UX</h4>
+                        <p style="color: var(--color-gray-light);">
+                            طراحی Wireframe و Mockup در Figma با تمرکز بر سادگی و سرعت استفاده.
+                            انجام User Testing با کارکنان رستوران.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">3️⃣ توسعه Backend</h4>
+                        <p style="color: var(--color-gray-light);">
+                            ساخت REST API با Node.js و Express، طراحی Schema های MongoDB،
+                            پیاده‌سازی Authentication و Authorization با JWT.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">4️⃣ توسعه Frontend</h4>
+                        <p style="color: var(--color-gray-light);">
+                            پیاده‌سازی UI با React و Tailwind CSS، ادغام با API،
+                            پیاده‌سازی Real-time updates با Socket.io.
+                        </p>
+                    </div>
+
+                    <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+                        <h4 style="color: var(--color-cyan); margin-bottom: 1rem;">5️⃣ تست و Deploy</h4>
+                        <p style="color: var(--color-gray-light);">
+                            انجام Unit Tests و Integration Tests، تست عملکرد با کارکنان واقعی،
+                            رفع باگ‌ها و Deploy نهایی.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Screenshots -->
+                <div class="project-section scroll-animate">
+                    <h3>نمای کلی از اپلیکیشن</h3>
+                    <div class="project-screenshots">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop"
+                             alt="Restaurant Dashboard"
+                             class="screenshot">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop"
+                             alt="Order Management"
+                             class="screenshot">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
+                             alt="Menu Management"
+                             class="screenshot">
+                        <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=600&h=400&fit=crop"
+                             alt="Kitchen Display"
+                             class="screenshot">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+                             alt="Analytics Dashboard"
+                             class="screenshot">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop"
+                             alt="Mobile View"
+                             class="screenshot">
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="project-section scroll-animate">
+                    <h3>نتایج و تأثیرات</h3>
+                    <div class="project-meta" style="margin-top: 2rem;">
+                        <div class="glass-card" style="text-align: center; padding: 2rem;">
+                            <h2 style="color: var(--color-cyan); margin-bottom: 0.5rem;">40%</h2>
+                            <p>کاهش خطای سفارش</p>
+                        </div>
+                        <div class="glass-card" style="text-align: center; padding: 2rem;">
+                            <h2 style="color: var(--color-purple); margin-bottom: 0.5rem;">25%</h2>
+                            <p>افزایش سرعت سرویس‌دهی</p>
+                        </div>
+                        <div class="glass-card" style="text-align: center; padding: 2rem;">
+                            <h2 style="color: var(--color-cyan); margin-bottom: 0.5rem;">35%</h2>
+                            <p>افزایش رضایت مشتری</p>
+                        </div>
+                        <div class="glass-card" style="text-align: center; padding: 2rem;">
+                            <h2 style="color: var(--color-purple); margin-bottom: 0.5rem;">50%</h2>
+                            <p>کاهش زمان ثبت سفارش</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 2rem;">
+                        پس از راه‌اندازی سیستم، رستوران‌ها شاهد بهبود چشمگیری در کارایی و رضایت مشتری بودند.
+                        خطاهای سفارش به شکل قابل توجهی کاهش یافت و زمان سرویس‌دهی به مشتریان بهبود پیدا کرد.
+                    </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div class="project-section scroll-animate">
+                    <h3>درس‌های آموخته شده</h3>
+                    <p>
+                        این پروژه اهمیت درک عمیق از نیازهای کاربر نهایی را نشان داد. کار نزدیک با کارکنان رستوران
+                        در طول فرآیند توسعه باعث شد که محصول نهایی دقیقاً مطابق با نیازهای واقعی آنها باشد.
+                    </p>
+                    <p>
+                        همچنین اهمیت Real-time updates در سیستم‌های مدیریت سفارش را درک کردم. استفاده از
+                        WebSocket برای به‌روزرسانی‌های آنی تجربه کاربری را به شکل چشمگیری بهبود بخشید.
+                    </p>
+                </div>
+
+                <!-- Testimonial -->
+                <div class="scroll-animate">
+                    <div class="glass-card" style="padding: 3rem; margin-top: 3rem; border-right: 4px solid var(--color-cyan);">
+                        <p style="font-size: 1.25rem; font-style: italic; color: var(--color-white); margin-bottom: 1.5rem;">
+                            "این سیستم کاملاً کسب‌وکار ما را متحول کرد. اکنون می‌توانیم سفارش‌ها را بدون خطا مدیریت کنیم
+                            و مشتریان ما از سرعت و دقت سرویس ما بسیار راضی هستند. بهترین سرمایه‌گذاری ما در سال گذشته بود!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div>
+                                <p style="font-weight: 600; color: var(--color-white); margin-bottom: 0.25rem;">احمد رضایی</p>
+                                <p style="color: var(--color-gray-medium); font-size: 0.875rem; margin: 0;">مدیر عامل، Restaurant Chain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RELATED PROJECTS ========== -->
+    <section class="section related-projects">
+        <div class="container">
+            <h2 class="scroll-animate" style="margin-bottom: 2rem;">پروژه‌های مرتبط</h2>
+            <div class="slider">
+                <div class="slider-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+                         alt="E-commerce Platform"
+                         style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <span class="project-category">Web Development</span>
+                    <h3 style="font-size: 1.25rem; margin: 0.5rem 0;">E-commerce Platform</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-gray-light);">
+                        پلتفرم فروش آنلاین با UI/UX حرفه‌ای
+                    </p>
+                    <a href="project-detail-ecommerce.html" class="btn btn-outline" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">مشاهده پروژه</a>
+                </div>
+
+                <div class="slider-card glass-card">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop"
+                         alt="Design System"
+                         style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+                    <span class="project-category">UI/UX Design</span>
+                    <h3 style="font-size: 1.25rem; margin: 0.5rem 0;">Design System</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-gray-light);">
+                        سیستم طراحی جامع برای محصول
+                    </p>
+                    <a href="project-detail-design-system.html" class="btn btn-outline" style="margin-top: 1rem; padding: 0.5rem 1.5rem;">مشاهده پروژه</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="glass-card scroll-animate" style="text-align: center; padding: 4rem 2rem;">
+                <h2 style="margin-bottom: 1rem;">پروژه مشابهی دارید؟</h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    بیایید در مورد پروژه شما صحبت کنیم و ببینیم چگونه می‌توانم به شما کمک کنم.
+                </p>
+                <a href="contact.html" class="btn btn-primary">تماس با من</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">خانه</a>
+                <a href="projects.html">پروژه‌ها</a>
+                <a href="about.html">درباره من</a>
+                <a href="contact.html">تماس</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Dribbble">
+                    <i class="fab fa-dribbble"></i>
+                </a>
+            </div>
+
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
