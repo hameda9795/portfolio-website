@@ -742,12 +742,414 @@ const preloadImages = (urls) => {
     });
 };
 
+// ========== SCROLL PROGRESS INDICATOR ==========
+
+class ScrollProgress {
+    constructor() {
+        this.progressBar = this.createProgressBar();
+        this.init();
+    }
+
+    createProgressBar() {
+        const bar = document.createElement('div');
+        bar.className = 'scroll-progress';
+        document.body.prepend(bar);
+        return bar;
+    }
+
+    init() {
+        window.addEventListener('scroll', debounce(() => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            this.progressBar.style.width = `${scrolled}%`;
+        }, 10));
+    }
+}
+
+// ========== ENHANCED LAZY LOADING ==========
+
+class EnhancedLazyLoad {
+    constructor() {
+        this.images = document.querySelectorAll('img[loading="lazy"]');
+        this.init();
+    }
+
+    init() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+
+                        // Add skeleton class while loading
+                        img.classList.add('image-skeleton');
+
+                        // Load image
+                        img.addEventListener('load', () => {
+                            img.classList.remove('image-skeleton');
+                            img.classList.add('fade-in');
+                        });
+
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px'
+            });
+
+            this.images.forEach(img => imageObserver.observe(img));
+        }
+    }
+}
+
+// ========== TOOLTIPS ==========
+
+class TooltipManager {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Add tooltip class to skill icons
+        const skillIcons = document.querySelectorAll('.skill-icon');
+        skillIcons.forEach((icon, index) => {
+            const skillName = icon.closest('.skill-card')?.querySelector('.skill-name')?.textContent;
+            if (skillName) {
+                icon.classList.add('tooltip');
+                icon.setAttribute('data-tooltip', skillName);
+            }
+        });
+
+        // Add tooltip to social links
+        const socialLinks = document.querySelectorAll('.social-link');
+        socialLinks.forEach(link => {
+            const label = link.getAttribute('aria-label');
+            if (label) {
+                link.classList.add('tooltip');
+                link.setAttribute('data-tooltip', label);
+            }
+        });
+    }
+}
+
+// ========== ENHANCED FORM SUBMISSION ==========
+
+class EnhancedContactForm extends ContactForm {
+    submitForm() {
+        const formData = new FormData(this.form);
+        const data = Object.fromEntries(formData);
+
+        const submitButton = this.form.querySelector('.btn');
+        const originalText = submitButton.innerHTML;
+
+        // Show loading spinner
+        submitButton.innerHTML = '<span class="loading-spinner"></span> Sending...';
+        submitButton.disabled = true;
+
+        // Simulate form submission
+        setTimeout(() => {
+            console.log('Form data:', data);
+
+            // Show success with checkmark animation
+            this.showSuccessMessage();
+
+            // Reset form
+            this.form.reset();
+
+            // Reset button
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        }, 1500);
+    }
+
+    showSuccessMessage() {
+        const successElement = document.querySelector('.form-success');
+        if (successElement) {
+            // Add checkmark SVG
+            const checkmark = `
+                <svg width="20" height="20" viewBox="0 0 20 20" style="display: inline-block; margin-right: 8px; vertical-align: middle;">
+                    <circle cx="10" cy="10" r="9" fill="none" stroke="#22C55E" stroke-width="2"/>
+                    <path class="success-checkmark" d="M6 10 L9 13 L14 7" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            `;
+            successElement.innerHTML = checkmark + 'Thank you! Your message has been sent successfully.';
+            successElement.classList.add('show');
+
+            setTimeout(() => {
+                successElement.classList.remove('show');
+            }, 5000);
+        }
+    }
+}
+
+// ========== KEYBOARD NAVIGATION ENHANCEMENT ==========
+
+class KeyboardNavigation {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // Add keyboard support for filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach((button, index) => {
+            button.setAttribute('tabindex', '0');
+
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+
+                // Arrow key navigation
+                if (e.key === 'ArrowRight' && filterButtons[index + 1]) {
+                    filterButtons[index + 1].focus();
+                }
+                if (e.key === 'ArrowLeft' && filterButtons[index - 1]) {
+                    filterButtons[index - 1].focus();
+                }
+            });
+        });
+
+        // Add keyboard support for project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            const link = card.querySelector('a');
+            if (link) {
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        link.click();
+                    }
+                });
+            }
+        });
+
+        // Escape key to close mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu?.classList.contains('active')) {
+                    const navToggle = document.querySelector('.nav-toggle');
+                    navToggle?.click();
+                }
+            }
+        });
+    }
+}
+
+// ========== INTERSECTION OBSERVER FOR STAGGERED ANIMATIONS ==========
+
+class StaggeredAnimations {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+    }
+}
+
+// ========== PARALLAX EFFECT ==========
+
+class EnhancedParallax {
+    constructor() {
+        this.heroElements = document.querySelectorAll('.floating-element');
+        this.init();
+    }
+
+    init() {
+        if (this.heroElements.length === 0) return;
+
+        window.addEventListener('scroll', debounce(() => {
+            const scrolled = window.pageYOffset;
+
+            this.heroElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.2);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.05}deg)`;
+            });
+        }, 10));
+
+        // Mouse move parallax for hero section
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                this.heroElements.forEach((element, index) => {
+                    const speed = 20 + (index * 10);
+                    element.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+        }
+    }
+}
+
+// ========== PERFORMANCE MONITORING ==========
+
+class PerformanceMonitor {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        if ('PerformanceObserver' in window) {
+            // Monitor long tasks
+            const observer = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (entry.duration > 50) {
+                        console.warn('Long task detected:', entry);
+                    }
+                }
+            });
+
+            try {
+                observer.observe({ entryTypes: ['longtask'] });
+            } catch (e) {
+                // Long task API not supported
+            }
+        }
+
+        // Log page load performance
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData) {
+                    console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+                    console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.fetchStart, 'ms');
+                }
+            }, 0);
+        });
+    }
+}
+
+// ========== ACCESSIBILITY ANNOUNCER ==========
+
+class AccessibilityAnnouncer {
+    constructor() {
+        this.announcer = this.createAnnouncer();
+    }
+
+    createAnnouncer() {
+        const announcer = document.createElement('div');
+        announcer.setAttribute('role', 'status');
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.setAttribute('aria-atomic', 'true');
+        announcer.style.position = 'absolute';
+        announcer.style.left = '-10000px';
+        announcer.style.width = '1px';
+        announcer.style.height = '1px';
+        announcer.style.overflow = 'hidden';
+        document.body.appendChild(announcer);
+        return announcer;
+    }
+
+    announce(message) {
+        this.announcer.textContent = '';
+        setTimeout(() => {
+            this.announcer.textContent = message;
+        }, 100);
+    }
+}
+
+// Create global announcer instance
+const a11yAnnouncer = new AccessibilityAnnouncer();
+
+// ========== ENHANCED PROJECT FILTER WITH ANNOUNCEMENTS ==========
+
+class EnhancedProjectFilter extends ProjectFilter {
+    filterProjects(category) {
+        super.filterProjects(category);
+
+        // Count visible projects
+        const visibleProjects = Array.from(this.projectCards).filter(
+            card => card.style.display !== 'none'
+        ).length;
+
+        // Announce to screen readers
+        const categoryText = category === 'all' ? 'all categories' : category;
+        a11yAnnouncer.announce(`Showing ${visibleProjects} projects in ${categoryText}`);
+    }
+}
+
+// ========== INITIALIZE ALL ENHANCED MODULES ==========
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Core features (already initialized)
+    new Navigation();
+    new ScrollAnimations();
+    new SmoothScroll();
+    new RippleEffect();
+    new LazyLoader();
+    new ParallaxEffect();
+
+    // Enhanced features
+    new ScrollProgress();
+    new EnhancedLazyLoad();
+    new TooltipManager();
+    new KeyboardNavigation();
+    new StaggeredAnimations();
+    new EnhancedParallax();
+    new PerformanceMonitor();
+
+    // Page-specific enhanced features
+    if (document.querySelector('.project-card')) {
+        new ProjectCardEffects();
+    }
+
+    if (document.querySelector('.filter-btn')) {
+        new EnhancedProjectFilter();
+    }
+
+    if (document.querySelector('.contact-form')) {
+        new EnhancedContactForm();
+    }
+
+    if (document.querySelector('.skills-grid')) {
+        new SkillsAnimation();
+    }
+
+    // Optional: Typing effect for hero
+    const typingElement = document.querySelector('.typing-text');
+    if (typingElement) {
+        const words = typingElement.dataset.words ? typingElement.dataset.words.split(',') : ['Developer', 'Designer', 'Creator'];
+        new TypingEffect(typingElement, words);
+    }
+
+    // Add page-enter animation
+    document.body.classList.add('page-enter');
+
+    console.log('🚀 Portfolio website loaded successfully!');
+    console.log('✨ All animations and interactions are active');
+});
+
 // Export for use in other scripts if needed
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         Navigation,
         ProjectFilter,
         ContactForm,
-        ScrollAnimations
+        ScrollAnimations,
+        EnhancedProjectFilter,
+        EnhancedContactForm,
+        KeyboardNavigation,
+        AccessibilityAnnouncer
     };
 }

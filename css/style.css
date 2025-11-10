@@ -1251,3 +1251,405 @@ a:hover {
 .hidden {
     display: none;
 }
+
+/* ========== ADVANCED ANIMATIONS ========== */
+
+/* Staggered animations for project items */
+.projects-grid .project-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.projects-grid .project-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.projects-grid .project-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.projects-grid .project-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.projects-grid .project-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.projects-grid .project-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Enhanced card hover with elevation */
+.glass-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2),
+                0 0 0 1px rgba(0, 240, 255, 0.1);
+}
+
+/* Pulse animation for CTA buttons */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(0, 240, 255, 0);
+    }
+}
+
+.btn-primary:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Success checkmark animation */
+@keyframes checkmark {
+    0% {
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.success-checkmark {
+    stroke-dasharray: 100;
+    animation: checkmark 0.5s ease-out forwards;
+}
+
+/* Form input focus animation */
+.form-group input,
+.form-group textarea {
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-cyan);
+    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Input label float animation */
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: var(--color-cyan);
+}
+
+/* Loading spinner */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-cyan);
+    animation: spin 0.8s linear infinite;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    padding: 0.5rem 1rem;
+    background: rgba(10, 14, 39, 0.95);
+    color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(10, 14, 39, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Slide in from side animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Enhanced project card animations */
+.project-card {
+    will-change: transform;
+}
+
+.project-card-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Filter button enhanced animation */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 240, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.filter-btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Skill progress bar animation */
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+}
+
+.skill-progress {
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+/* Nav link underline animation */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Image loading skeleton */
+.image-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Smooth page transitions */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-enter {
+    animation: pageEnter 0.5s ease-out forwards;
+}
+
+/* Enhanced mobile touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active {
+        transform: scale(0.95);
+    }
+
+    .project-card:active {
+        transform: scale(0.98);
+    }
+
+    .filter-btn:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Parallax sections */
+.parallax-section {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav,
+    .footer,
+    .btn,
+    .scroll-indicator {
+        display: none;
+    }
+
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-cyan: #00FFFF;
+        --color-purple: #FF00FF;
+    }
+
+    .glass-card {
+        border: 2px solid var(--color-white);
+    }
+}
+
+/* Dark mode support (if implementing toggle) */
+[data-theme="light"] {
+    --color-midnight: #FFFFFF;
+    --color-dark-blue: #F0F4F8;
+    --color-white: #1A202C;
+    --color-gray-light: #2D3748;
+    --color-gray-medium: #4A5568;
+}
+
+/* Selection styling */
+::selection {
+    background: var(--color-cyan);
+    color: var(--color-midnight);
+}
+
+::-moz-selection {
+    background: var(--color-cyan);
+    color: var(--color-midnight);
+}
